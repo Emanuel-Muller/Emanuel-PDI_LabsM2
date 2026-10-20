@@ -1,0 +1,73 @@
+{
+  "input": "images/output/cena_mask.png",
+  "output_prefix": "results\\cena",
+  "dimensions": {
+    "width": 256,
+    "height": 256
+  },
+  "mask_contract": {
+    "single_channel": true,
+    "binary_values": [
+      0,
+      255
+    ],
+    "foreground_is": 255
+  },
+  "connectivity": 8,
+  "initial_connectivity_counts": {
+    "4": 4,
+    "8": 4
+  },
+  "min_area": 20,
+  "morphology": {
+    "order": [
+      "opening",
+      "closing"
+    ],
+    "kernel_shape": "ellipse",
+    "kernel_size": [
+      3,
+      3
+    ],
+    "open_iterations": 1,
+    "close_iterations": 1,
+    "stages": [
+      {
+        "operation": "opening",
+        "iterations": 1,
+        "file": "cena_opened.png",
+        "foreground_pixels": 31110
+      },
+      {
+        "operation": "closing",
+        "iterations": 1,
+        "file": "cena_final.png",
+        "foreground_pixels": 31115
+      }
+    ]
+  },
+  "initial": {
+    "raw_count": 4,
+    "filtered_count": 4,
+    "raw_foreground_area": 31120,
+    "filtered_foreground_area": 31120,
+    "foreground_pixels": 31120,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "final": {
+    "raw_count": 4,
+    "filtered_count": 4,
+    "raw_foreground_area": 31115,
+    "filtered_foreground_area": 31115,
+    "foreground_pixels": 31115,
+    "raw_component_count": 4,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "artifacts": {
+    "initial_mask": "cena_initial.png",
+    "initial_csv": "cena_initial.csv",
+    "final_mask": "cena_final.png",
+    "final_csv": "cena_final.csv",
+    "labels_visualization": "cena_labels.png"
+  }
+}

@@ -1,0 +1,73 @@
+{
+  "input": "images/output/moedas1_mask.png",
+  "output_prefix": "results\\moedas1",
+  "dimensions": {
+    "width": 1200,
+    "height": 1600
+  },
+  "mask_contract": {
+    "single_channel": true,
+    "binary_values": [
+      0,
+      255
+    ],
+    "foreground_is": 255
+  },
+  "connectivity": 8,
+  "initial_connectivity_counts": {
+    "4": 1677,
+    "8": 966
+  },
+  "min_area": 20,
+  "morphology": {
+    "order": [
+      "opening",
+      "closing"
+    ],
+    "kernel_shape": "ellipse",
+    "kernel_size": [
+      3,
+      3
+    ],
+    "open_iterations": 1,
+    "close_iterations": 1,
+    "stages": [
+      {
+        "operation": "opening",
+        "iterations": 1,
+        "file": "moedas1_opened.png",
+        "foreground_pixels": 1766458
+      },
+      {
+        "operation": "closing",
+        "iterations": 1,
+        "file": "moedas1_final.png",
+        "foreground_pixels": 1773866
+      }
+    ]
+  },
+  "initial": {
+    "raw_count": 966,
+    "filtered_count": 151,
+    "raw_foreground_area": 1779914,
+    "filtered_foreground_area": 1776065,
+    "foreground_pixels": 1779914,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "final": {
+    "raw_count": 355,
+    "filtered_count": 65,
+    "raw_foreground_area": 1773866,
+    "filtered_foreground_area": 1771565,
+    "foreground_pixels": 1773866,
+    "raw_component_count": 355,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "artifacts": {
+    "initial_mask": "moedas1_initial.png",
+    "initial_csv": "moedas1_initial.csv",
+    "final_mask": "moedas1_final.png",
+    "final_csv": "moedas1_final.csv",
+    "labels_visualization": "moedas1_labels.png"
+  }
+}

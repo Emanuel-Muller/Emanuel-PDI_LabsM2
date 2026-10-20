@@ -1,0 +1,73 @@
+{
+  "input": "results/m2_2/shapes_border_mask.png",
+  "output_prefix": "results/m2_2/shapes_border",
+  "dimensions": {
+    "width": 256,
+    "height": 256
+  },
+  "mask_contract": {
+    "single_channel": true,
+    "binary_values": [
+      0,
+      255
+    ],
+    "foreground_is": 255
+  },
+  "connectivity": 8,
+  "initial_connectivity_counts": {
+    "4": 2,
+    "8": 2
+  },
+  "min_area": 20,
+  "morphology": {
+    "order": [
+      "opening",
+      "closing"
+    ],
+    "kernel_shape": "ellipse",
+    "kernel_size": [
+      3,
+      3
+    ],
+    "open_iterations": 1,
+    "close_iterations": 1,
+    "stages": [
+      {
+        "operation": "opening",
+        "iterations": 1,
+        "file": "shapes_border_opened.png",
+        "foreground_pixels": 19256
+      },
+      {
+        "operation": "closing",
+        "iterations": 1,
+        "file": "shapes_border_final.png",
+        "foreground_pixels": 19258
+      }
+    ]
+  },
+  "initial": {
+    "raw_count": 2,
+    "filtered_count": 2,
+    "raw_foreground_area": 19259,
+    "filtered_foreground_area": 19259,
+    "foreground_pixels": 19259,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "final": {
+    "raw_count": 2,
+    "filtered_count": 2,
+    "raw_foreground_area": 19258,
+    "filtered_foreground_area": 19258,
+    "foreground_pixels": 19258,
+    "raw_component_count": 2,
+    "area_sum_matches_foreground_pixels": true
+  },
+  "artifacts": {
+    "initial_mask": "shapes_border_initial.png",
+    "initial_csv": "shapes_border_initial.csv",
+    "final_mask": "shapes_border_final.png",
+    "final_csv": "shapes_border_final.csv",
+    "labels_visualization": "shapes_border_labels.png"
+  }
+}
