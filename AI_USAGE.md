@@ -1,3 +1,3 @@
 # Declaração de uso de IA generativa
 
-Declaro que não utilizei ferramentas de Inteligência Artificial generativa na elaboração do código, dos testes, das imagens, do relatório ou de outros artefatos deste laboratório.
+Foi utilizada assistência de IA generativa para apoiar a integração da operação analyze, a implementação da sequência morfológica e da rotulação de componentes conexos, a elaboração de testes e a atualização da documentação.
